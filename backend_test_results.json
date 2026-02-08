@@ -1,0 +1,117 @@
+{
+  "summary": {
+    "total_tests": 18,
+    "passed_tests": 18,
+    "success_rate": 100.0
+  },
+  "detailed_results": [
+    {
+      "test": "User Registration",
+      "success": true,
+      "details": "Status: 200, Response: {\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NWYyZWVjNy02YTEyLTRiN2MtODFlMi02ZjdkMmY4YjhkOTAiLCJleHAiOjE3NzExNzQzNjZ9.XivmNDJ9nEFuDvAmvjkv_c_XRXUVN9O3VXvhSqBDfMg\",\n  \"user\": {\n    \"i...",
+      "timestamp": "2026-02-08T16:52:46.820074"
+    },
+    {
+      "test": "Farm Creation",
+      "success": true,
+      "details": "Status: 200, Response: {\n  \"id\": \"dbb586f1-b5cd-440e-ba40-5af9c2c252c0\",\n  \"user_id\": \"95f2eec7-6a12-4b7c-81e2-6f7d2f8b8d90\",\n  \"name\": \"Test Smart Farm\",\n  \"crop_type\": \"Rice\",\n  \"field_size\": 5.5,\n  \"location\": {\n    \"lat...",
+      "timestamp": "2026-02-08T16:52:46.888106"
+    },
+    {
+      "test": "Get User Farms",
+      "success": true,
+      "details": "Status: 200, Response: [\n  {\n    \"id\": \"dbb586f1-b5cd-440e-ba40-5af9c2c252c0\",\n    \"user_id\": \"95f2eec7-6a12-4b7c-81e2-6f7d2f8b8d90\",\n    \"name\": \"Test Smart Farm\",\n    \"crop_type\": \"Rice\",\n    \"field_size\": 5.5,\n    \"locat...",
+      "timestamp": "2026-02-08T16:52:46.928014"
+    },
+    {
+      "test": "Sensor Data Retrieval",
+      "success": true,
+      "details": "Status: 200, Response: {\n  \"soil_moisture\": 45.5,\n  \"soil_temperature\": 24.3,\n  \"ambient_temperature\": 28.5,\n  \"humidity\": 65.0,\n  \"light_intensity\": 75000.0,\n  \"timestamp\": \"2026-02-08T16:52:47.159757+00:00\",\n  \"status\": \"...",
+      "timestamp": "2026-02-08T16:52:47.163199"
+    },
+    {
+      "test": "Sensor Data Structure",
+      "success": true,
+      "details": "All required fields present",
+      "timestamp": "2026-02-08T16:52:47.163821"
+    },
+    {
+      "test": "Weather API",
+      "success": true,
+      "details": "Status: 200, Response: {\n  \"current\": {\n    \"temp_c\": 25.3,\n    \"condition\": \"Mist\",\n    \"humidity\": 83,\n    \"wind_kph\": 15.8,\n    \"icon\": \"//cdn.weatherapi.com/weather/64x64/night/143.png\"\n  },\n  \"forecast\": [\n    {\n      ...",
+      "timestamp": "2026-02-08T16:52:47.589005"
+    },
+    {
+      "test": "Weather Data Structure",
+      "success": true,
+      "details": "Weather data structure valid",
+      "timestamp": "2026-02-08T16:52:47.589723"
+    },
+    {
+      "test": "Crop Health Analysis",
+      "success": true,
+      "details": "Status: 200, Response: {\n  \"health_status\": \"Healthy\",\n  \"confidence\": 0.92,\n  \"reasons\": [\n    \"Soil moisture at 45.5% is within the ideal range for rice cultivation, ensuring adequate saturation for root development.\",\n  ...",
+      "timestamp": "2026-02-08T16:52:50.821243"
+    },
+    {
+      "test": "Crop Health Response Structure",
+      "success": true,
+      "details": "Response structure valid",
+      "timestamp": "2026-02-08T16:52:50.821865"
+    },
+    {
+      "test": "Yield Prediction",
+      "success": true,
+      "details": "Status: 200, Response: {\n  \"estimated_yield\": 12.1,\n  \"unit\": \"tons\",\n  \"confidence\": 0.88,\n  \"comparison\": \"Above average (conditions are highly favorable for rice cultivation, particularly the temperature and soil moistur...",
+      "timestamp": "2026-02-08T16:52:54.540906"
+    },
+    {
+      "test": "Yield Prediction Response Structure",
+      "success": true,
+      "details": "Response structure valid",
+      "timestamp": "2026-02-08T16:52:54.541761"
+    },
+    {
+      "test": "Irrigation Recommendation",
+      "success": true,
+      "details": "Status: 200, Response: {\n  \"should_irrigate\": false,\n  \"water_amount\": null,\n  \"reason\": \"Soil moisture at 45.5% is adequate. No irrigation needed.\"\n}...",
+      "timestamp": "2026-02-08T16:52:54.660058"
+    },
+    {
+      "test": "Irrigation Response Structure",
+      "success": true,
+      "details": "Response structure valid",
+      "timestamp": "2026-02-08T16:52:54.660757"
+    },
+    {
+      "test": "AI Chatbot",
+      "success": true,
+      "details": "Status: 200, Response: {\n  \"response\": \"Hello! Watering rice correctly is the secret to a heavy harvest. For most traditional rice varieties, the \\\"best\\\" time isn't just about the hour of the day, but the **stage of the pl...",
+      "timestamp": "2026-02-08T16:52:58.758355"
+    },
+    {
+      "test": "Chatbot Response",
+      "success": true,
+      "details": "Response received: Hello! Watering rice correctly is the secret to a heavy harvest. For most traditional rice varieties...",
+      "timestamp": "2026-02-08T16:52:58.758969"
+    },
+    {
+      "test": "Get Alerts",
+      "success": true,
+      "details": "Status: 200, Response: []...",
+      "timestamp": "2026-02-08T16:52:58.798063"
+    },
+    {
+      "test": "Government Schemes",
+      "success": true,
+      "details": "Status: 200, Response: [\n  {\n    \"id\": \"1\",\n    \"name\": \"PM-KISAN\",\n    \"description\": \"Direct income support of \\u20b96000 per year to farmers\",\n    \"eligibility\": \"All landholding farmers\",\n    \"states\": [\n      \"all\"\n   ...",
+      "timestamp": "2026-02-08T16:52:58.839204"
+    },
+    {
+      "test": "Schemes Response Structure",
+      "success": true,
+      "details": "Found 2 schemes",
+      "timestamp": "2026-02-08T16:52:58.839901"
+    }
+  ]
+}
