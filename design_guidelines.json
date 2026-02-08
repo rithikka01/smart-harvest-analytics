@@ -1,0 +1,162 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "AgriSmart - The Farmer's Companion",
+      "persona": "E1 - The Anti-AI Designer",
+      "tone": "Trustworthy, Earthy, High-Contrast, Action-Oriented",
+      "archetype": "Organic & Earthy (Archetype 1) with High-Contrast Utility"
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Manrope, sans-serif",
+        "body": "Public Sans, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-4xl md:text-5xl font-bold tracking-tight",
+        "h2": "text-3xl md:text-4xl font-bold tracking-tight",
+        "h3": "text-2xl md:text-3xl font-semibold",
+        "body_large": "text-lg md:text-xl leading-relaxed",
+        "body_default": "text-base leading-relaxed",
+        "caption": "text-sm font-medium tracking-wide uppercase text-muted-foreground"
+      },
+      "imports": [
+        "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Public+Sans:wght@400;500;700&display=swap');"
+      ]
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "name": "Leaf Green",
+          "hex": "#2E7D32",
+          "hsl": "123 46% 34%",
+          "usage": "Primary buttons, active states, 'Good' status indicators"
+        },
+        "secondary": {
+          "name": "Earth Brown",
+          "hex": "#8D6E63",
+          "hsl": "16 18% 47%",
+          "usage": "Soil data, secondary backgrounds, borders"
+        },
+        "accent": {
+          "name": "Harvest Yellow",
+          "hex": "#FBC02D",
+          "hsl": "43 96% 58%",
+          "usage": "Warnings, yield predictions, highlights"
+        },
+        "destructive": {
+          "name": "Alert Red",
+          "hex": "#D32F2F",
+          "hsl": "0 66% 51%",
+          "usage": "Critical alerts, 'Stop' actions, error states"
+        },
+        "background": {
+          "name": "Bone White",
+          "hex": "#F9FAFB",
+          "hsl": "210 20% 98%",
+          "usage": "Main app background (reduces glare compared to pure white)"
+        },
+        "card": {
+          "name": "Pure White",
+          "hex": "#FFFFFF",
+          "hsl": "0 0% 100%",
+          "usage": "Card backgrounds, modal surfaces"
+        },
+        "text": {
+          "primary": "#111827",
+          "secondary": "#4B5563",
+          "muted": "#9CA3AF"
+        }
+      },
+      "gradients": {
+        "hero": "bg-gradient-to-br from-[#2E7D32] to-[#1B5E20]",
+        "warning": "bg-gradient-to-r from-[#FBC02D] to-[#F57F17]"
+      }
+    },
+    "layout": {
+      "spacing": {
+        "container_padding": "p-4 md:p-8 lg:p-12",
+        "section_gap": "gap-8 md:gap-12",
+        "card_padding": "p-6"
+      },
+      "grid_system": {
+        "dashboard": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6",
+        "bento_hero": "grid grid-cols-1 md:grid-cols-12 gap-4"
+      },
+      "border_radius": {
+        "default": "rounded-xl",
+        "card": "rounded-2xl",
+        "button": "rounded-full"
+      }
+    },
+    "components": {
+      "buttons": {
+        "primary": "bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 rounded-full font-bold shadow-lg hover:shadow-xl transition-all active:scale-95",
+        "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/90 h-12 px-6 rounded-full font-medium",
+        "outline": "border-2 border-primary text-primary hover:bg-primary/10 h-12 px-6 rounded-full font-bold",
+        "icon_large": "h-16 w-16 rounded-full bg-primary text-white shadow-xl flex items-center justify-center"
+      },
+      "cards": {
+        "dashboard_widget": "bg-card border border-border/50 shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl p-6 flex flex-col justify-between",
+        "weather_card": "bg-gradient-to-br from-sky-400 to-blue-600 text-white rounded-3xl p-6 shadow-lg"
+      },
+      "navigation": {
+        "mobile_bottom_bar": "fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 h-16 flex justify-around items-center z-50 pb-safe",
+        "desktop_sidebar": "hidden md:flex flex-col w-64 bg-white border-r border-gray-200 h-screen p-6"
+      }
+    },
+    "visual_assets": {
+      "icons": {
+        "library": "lucide-react",
+        "style": "Stroke width 2px, rounded caps",
+        "usage": "Use large icons (w-8 h-8 or w-12 h-12) for main dashboard actions"
+      },
+      "images": {
+        "hero_login": {
+          "url": "https://images.unsplash.com/photo-1628179148156-d9cfac053d6f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBmYXJtZXIlMjBpbiUyMGdyZWVuJTIwZmllbGQlMjB1c2luZyUyMHNtYXJ0cGhvbmV8ZW58MHx8fHwxNzcwNTY4OTQwfDA&ixlib=rb-4.1.0&q=85",
+          "alt": "Indian farmer in green field using smartphone",
+          "usage": "Login screen background, Landing page hero"
+        },
+        "crop_health_bg": {
+          "url": "https://images.unsplash.com/photo-1747212830034-aec684e60ac8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwZ3JlZW4lMjBjcm9wJTIwZmllbGQlMjBjbG9zZSUyMHVwfGVufDB8fHx8MTc3MDU2ODk0NXww&ixlib=rb-4.1.0&q=85",
+          "alt": "Healthy green crop field close up",
+          "usage": "Crop health section background or card header"
+        },
+        "yield_prediction_bg": {
+          "url": "https://images.pexels.com/photos/34214/wheat-barley-cereals-grain.jpg",
+          "alt": "Wheat barley cereals grain",
+          "usage": "Yield prediction card background"
+        }
+      }
+    },
+    "accessibility": {
+      "contrast": "Ensure all text has at least 4.5:1 contrast ratio. Use dark gray (#111827) on light backgrounds, not pure black.",
+      "touch_targets": "All interactive elements must be at least 44x44px.",
+      "color_coding": "Do not rely on color alone. Use icons and text labels alongside Green/Yellow/Red status indicators."
+    },
+    "motion": {
+      "micro_interactions": "Add 'active:scale-95' to all buttons for tactile feedback.",
+      "page_transitions": "Use simple fade-in (opacity-0 to opacity-100) for page loads.",
+      "loading": "Use skeleton loaders for data fetching states."
+    },
+    "instructions_to_main_agent": [
+      "1. SETUP: Install 'lucide-react' and 'recharts' immediately.",
+      "2. THEME: Update 'tailwind.config.js' and 'index.css' with the provided color palette (HSL values).",
+      "3. FONTS: Add the Google Fonts import to 'index.css' and configure font families in Tailwind.",
+      "4. LAYOUT: Build a 'MobileLayout' component that includes the bottom navigation bar for mobile views.",
+      "5. DASHBOARD: Create a 'BentoGrid' layout for the main dashboard. Use the 'dashboard_widget' card style.",
+      "6. WEATHER: Create a dedicated 'WeatherWidget' that uses the 'weather_card' style.",
+      "7. VOICE: Implement a floating action button (FAB) for the Voice Assistant in the bottom-right corner.",
+      "8. LANGUAGES: Mock the language switching functionality. Ensure the UI supports dynamic text lengths.",
+      "9. CHARTS: Use 'recharts' for the Yield Prediction and Sensor History graphs. Style them to match the app colors.",
+      "10. TESTING: Add 'data-testid' to all buttons, inputs, and cards."
+    ],
+    "universal_guidelines": [
+      "Avoid generic 'AI slop' designs. Use the specific 'E1' styles defined above.",
+      "Do not use gradients for text.",
+      "Use 'sonner' for toast notifications.",
+      "Ensure the app is responsive and looks good on both mobile (375px) and desktop (1440px).",
+      "Prioritize the 'Light Theme' for outdoor visibility, but ensure code structure supports dark mode."
+    ]
+  }
+}
