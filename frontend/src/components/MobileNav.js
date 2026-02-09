@@ -14,7 +14,7 @@ const MobileNav = () => {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 h-16 flex justify-around items-center z-50 pb-safe" data-testid="mobile-nav">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center z-50 pb-safe shadow-lg" style={{ height: '64px' }} data-testid="mobile-nav">
       {navItems.map((item) => {
         const Icon = item.icon;
         const isActive = location.pathname === item.path;
@@ -27,8 +27,8 @@ const MobileNav = () => {
             }`}
             data-testid={`nav-${item.label.toLowerCase()}`}
           >
-            <Icon className={`w-6 h-6 ${isActive ? 'stroke-[2.5]' : 'stroke-2'}`} />
-            <span className="text-xs mt-1 font-medium">{item.label}</span>
+            <Icon className={`w-5 h-5 ${isActive ? 'stroke-[2.5]' : 'stroke-2'}`} />
+            <span className="text-[10px] mt-1 font-medium">{item.label}</span>
           </Link>
         );
       })}
