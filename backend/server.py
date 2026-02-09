@@ -28,7 +28,7 @@ db = client[os.environ['DB_NAME']]
 
 firebase_cred = credentials.Certificate(str(ROOT_DIR / 'firebase_config.json'))
 firebase_admin.initialize_app(firebase_cred, {
-    'databaseURL': 'https://smart-harvest-a9436-default-rtdb.firebaseio.com/'
+    'databaseURL': 'https://smart-harvest-a9436-default-rtdb.asia-southeast1.firebasedatabase.app/'
 })
 
 app = FastAPI()
