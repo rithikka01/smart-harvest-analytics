@@ -218,7 +218,7 @@ const Dashboard = () => {
           </Card>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <Link to="/weather" className="block">
             <Card className="sensor-card hover:border-primary transition-colors h-full" data-testid="weather-quick-link">
               <CardContent className="pt-6">
@@ -261,6 +261,22 @@ const Dashboard = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Yield</p>
                     <p className="text-xl font-bold">Prediction</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link to="/schemes" className="block">
+            <Card className="sensor-card hover:border-primary transition-colors h-full" data-testid="schemes-quick-link">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-full bg-orange-100">
+                    <Award className="w-8 h-8 text-orange-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Government</p>
+                    <p className="text-xl font-bold">Schemes</p>
                   </div>
                 </div>
               </CardContent>
