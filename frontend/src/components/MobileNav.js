@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, CloudRain, Sprout, TrendingUp, Droplets, MessageSquare, Bell, Settings } from 'lucide-react';
+import { Home, CloudRain, Sprout, Award, MessageSquare } from 'lucide-react';
 
 const MobileNav = () => {
   const location = useLocation();
@@ -9,7 +9,7 @@ const MobileNav = () => {
     { path: '/', icon: Home, label: 'Home' },
     { path: '/weather', icon: CloudRain, label: 'Weather' },
     { path: '/crop-health', icon: Sprout, label: 'Crop' },
-    { path: '/irrigation', icon: Droplets, label: 'Water' },
+    { path: '/schemes', icon: Award, label: 'Schemes' },
     { path: '/chatbot', icon: MessageSquare, label: 'Chat' },
   ];
 
