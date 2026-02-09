@@ -407,19 +407,114 @@ async def get_government_schemes(state: Optional[str] = None, crop: Optional[str
     schemes = [
         {
             "id": "1",
-            "name": "PM-KISAN",
-            "description": "Direct income support of ₹6000 per year to farmers",
-            "eligibility": "All landholding farmers",
+            "name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+            "description": "Direct income support of ₹6,000 per year in three equal installments to all landholding farmers",
+            "eligibility": "All landholding farmers (small and marginal farmers)",
+            "benefits": "₹2,000 every 4 months directly to bank account",
+            "website": "https://pmkisan.gov.in/",
             "states": ["all"],
-            "crops": ["all"]
+            "crops": ["all"],
+            "category": "Financial Support"
         },
         {
             "id": "2",
-            "name": "Crop Insurance Scheme",
-            "description": "Insurance coverage against crop loss",
-            "eligibility": "All farmers with crop",
+            "name": "PMFBY (Pradhan Mantri Fasal Bima Yojana)",
+            "description": "Comprehensive crop insurance scheme providing financial support to farmers in case of crop loss",
+            "eligibility": "All farmers growing notified crops in notified areas",
+            "benefits": "Insurance coverage against crop failure due to natural calamities, pests & diseases",
+            "website": "https://pmfby.gov.in/",
             "states": ["all"],
-            "crops": ["all"]
+            "crops": ["all"],
+            "category": "Insurance"
+        },
+        {
+            "id": "3",
+            "name": "Kisan Credit Card (KCC)",
+            "description": "Credit facility for farmers to meet short-term credit requirements for cultivation and other needs",
+            "eligibility": "All farmers including tenant farmers, oral lessees and sharecroppers",
+            "benefits": "Easy credit access, lower interest rates, flexible repayment",
+            "website": "https://www.india.gov.in/spotlight/kisan-credit-card-kcc-scheme",
+            "states": ["all"],
+            "crops": ["all"],
+            "category": "Credit Facility"
+        },
+        {
+            "id": "4",
+            "name": "PM Kusum Yojana",
+            "description": "Solar pump and grid-connected solar power plants for farmers to ensure irrigation and generate additional income",
+            "eligibility": "Individual farmers, cooperatives, farmer groups",
+            "benefits": "Solar pumps, grid-connected solar plants, subsidy up to 60%",
+            "website": "https://pmkusum.mnre.gov.in/",
+            "states": ["all"],
+            "crops": ["all"],
+            "category": "Solar Energy"
+        },
+        {
+            "id": "5",
+            "name": "Soil Health Card Scheme",
+            "description": "Provides soil health cards to farmers with crop-wise recommendations on nutrients and fertilizers",
+            "eligibility": "All farmers",
+            "benefits": "Free soil testing, nutrient recommendations, improved productivity",
+            "website": "https://soilhealth.dac.gov.in/",
+            "states": ["all"],
+            "crops": ["all"],
+            "category": "Soil Management"
+        },
+        {
+            "id": "6",
+            "name": "Paramparagat Krishi Vikas Yojana (PKVY)",
+            "description": "Organic farming promotion scheme supporting farmers to adopt organic farming",
+            "eligibility": "Groups of farmers interested in organic farming",
+            "benefits": "₹50,000 per hectare for 3 years, organic certification support",
+            "website": "https://pgsindia-ncof.gov.in/pkvy/Index.aspx",
+            "states": ["all"],
+            "crops": ["all"],
+            "category": "Organic Farming"
+        },
+        {
+            "id": "7",
+            "name": "National Agriculture Market (e-NAM)",
+            "description": "Online trading platform for agricultural commodities to ensure better price realization",
+            "eligibility": "All farmers and traders",
+            "benefits": "Transparent price discovery, reduced transaction costs, better market access",
+            "website": "https://www.enam.gov.in/",
+            "states": ["all"],
+            "crops": ["all"],
+            "category": "Market Linkage"
+        },
+        {
+            "id": "8",
+            "name": "National Mission for Sustainable Agriculture (NMSA)",
+            "description": "Promotes sustainable agriculture through climate-resilient farming practices",
+            "eligibility": "All farmers",
+            "benefits": "Training, technology adoption, water conservation support",
+            "website": "https://agricoop.gov.in/",
+            "states": ["all"],
+            "crops": ["all"],
+            "category": "Sustainable Farming"
+        },
+        {
+            "id": "9",
+            "name": "Kisan Call Center (KCC)",
+            "description": "Toll-free helpline providing expert advice on agriculture-related queries",
+            "eligibility": "All farmers",
+            "benefits": "24x7 support in local languages, expert guidance on farming",
+            "website": "https://mkisan.gov.in/",
+            "phone": "1800-180-1551",
+            "states": ["all"],
+            "crops": ["all"],
+            "category": "Advisory Services"
+        },
+        {
+            "id": "10",
+            "name": "Pradhan Mantri Kisan Maan Dhan Yojana",
+            "description": "Pension scheme for small and marginal farmers aged 18-40 years",
+            "eligibility": "Farmers with cultivable land up to 2 hectares",
+            "benefits": "₹3,000 monthly pension after 60 years of age",
+            "website": "https://maandhan.in/",
+            "states": ["all"],
+            "crops": ["all"],
+            "category": "Pension Scheme"
         }
     ]
     return schemes
