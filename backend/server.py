@@ -291,36 +291,14 @@ async def predict_yield(farm_id: str, current_user: dict = Depends(get_current_u
     
     sensor_data = await get_sensor_data(farm_id, current_user)
     
-    chat = LlmChat(
-        api_key=EMERGENT_KEY,
-        session_id=f"yield_prediction_{farm_id}",
-        system_message="You are an agricultural yield prediction expert."
-    ).with_model("gemini", "gemini-3-pro-preview")
-    
-    message = UserMessage(
-        text=f"""Predict yield for {farm['crop_type']} on {farm['field_size']} acres with:
-        - Soil Moisture: {sensor_data['soil_moisture']}%
-        - Temperature: {sensor_data['ambient_temperature']}°C
-        - Humidity: {sensor_data['humidity']}%
-        
-        Provide: estimated_yield (number), unit (tons/quintals), confidence (0-1), comparison with average.
-        Respond in JSON format only."""
+    # Use ML model for yield prediction
+    result = ml_service.predict_yield(
+        sensor_data=sensor_data,
+        crop_type=farm.get('crop_type', 'Rice'),
+        field_size=farm.get('field_size', 5.0)
     )
     
-    response = await chat.send_message(message)
-    
-    try:
-        import json
-        result = json.loads(response.strip('```json').strip('```').strip())
-        return result
-    except:
-        base_yield = farm['field_size'] * 2.5
-        return {
-            "estimated_yield": base_yield,
-            "unit": "tons",
-            "confidence": 0.78,
-            "comparison": {"regional_average": base_yield * 0.9, "last_season": base_yield * 0.95}
-        }
+    return result
 
 @api_router.post("/irrigation/recommend")
 async def recommend_irrigation(farm_id: str, current_user: dict = Depends(get_current_user)):
