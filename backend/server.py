@@ -269,7 +269,7 @@ async def get_weather(lat: float, lon: float, current_user: dict = Depends(get_c
 
 @api_router.post("/crop/analyze")
 async def analyze_crop_health(farm_id: str, current_user: dict = Depends(get_current_user)):
-    farm = await db.farms.find_one({" id": farm_id, "user_id": current_user['id']}, {"_id": 0})
+    farm = await db.farms.find_one({"id": farm_id, "user_id": current_user['id']}, {"_id": 0})
     if not farm:
         raise HTTPException(404, "Farm not found")
     
