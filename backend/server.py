@@ -269,43 +269,19 @@ async def get_weather(lat: float, lon: float, current_user: dict = Depends(get_c
 
 @api_router.post("/crop/analyze")
 async def analyze_crop_health(farm_id: str, current_user: dict = Depends(get_current_user)):
-    farm = await db.farms.find_one({"id": farm_id, "user_id": current_user['id']}, {"_id": 0})
+    farm = await db.farms.find_one({" id": farm_id, "user_id": current_user['id']}, {"_id": 0})
     if not farm:
         raise HTTPException(404, "Farm not found")
     
     sensor_data = await get_sensor_data(farm_id, current_user)
     
-    chat = LlmChat(
-        api_key=EMERGENT_KEY,
-        session_id=f"crop_analysis_{farm_id}",
-        system_message="You are an agricultural AI expert. Analyze crop health based on sensor data and provide recommendations."
-    ).with_model("gemini", "gemini-3-flash-preview")
-    
-    message = UserMessage(
-        text=f"""Analyze crop health for {farm['crop_type']} with these conditions:
-        - Soil Moisture: {sensor_data['soil_moisture']}%
-        - Soil Temperature: {sensor_data['soil_temperature']}°C
-        - Ambient Temperature: {sensor_data['ambient_temperature']}°C
-        - Humidity: {sensor_data['humidity']}%
-        - Light Intensity: {sensor_data['light_intensity']} lux
-        
-        Provide: health_status (Healthy/Moderate Stress/High Stress), confidence (0-1), reasons list, and recommendations list.
-        Respond in JSON format only."""
+    # Use ML model for prediction
+    result = ml_service.predict_crop_health(
+        sensor_data=sensor_data,
+        crop_type=farm.get('crop_type', 'Rice')
     )
     
-    response = await chat.send_message(message)
-    
-    try:
-        import json
-        result = json.loads(response.strip('```json').strip('```').strip())
-        return result
-    except:
-        return {
-            "health_status": "Moderate Stress" if sensor_data['status'] != 'optimal' else "Healthy",
-            "confidence": 0.85,
-            "reasons": ["Based on current sensor readings"],
-            "recommendations": ["Monitor soil moisture levels", "Ensure adequate irrigation"]
-        }
+    return result
 
 @api_router.post("/yield/predict")
 async def predict_yield(farm_id: str, current_user: dict = Depends(get_current_user)):
