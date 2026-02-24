@@ -31,15 +31,16 @@ for col in cat_cols:
 # Save encoders for later use
 joblib.dump(label_encoders, "label_encoders.pkl")
 
-# Define target column
-target_column = "Crop_Yield"
+# Use water_usage_efficiency as target (can be adapted based on your needs)
+target_column = "water_usage_efficiency"
 
 X = data.drop(columns=[target_column])
 y = data[target_column]
 
 print(f"\nFeatures shape: {X.shape}")
 print(f"Target shape: {y.shape}")
-print(f"Target unique values: {y.nunique()}")
+print(f"Target column: {target_column}")
+print(f"Target range: {y.min()} to {y.max()}")
 
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(
