@@ -112,7 +112,7 @@ class UserLogin(BaseModel):
     password: str
 
 def create_access_token(user_id: str):
-    expire = datetime.now(timezone.utc) + timedelta(days=7)
+    expire = datetime.now(timezone.utc) + timedelta(days=30)
     to_encode = {"sub": user_id, "exp": expire}
     return jwt.encode(to_encode, JWT_SECRET, algorithm="HS256")
 
