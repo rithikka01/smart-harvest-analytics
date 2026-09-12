@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Home, CloudRain, Sprout, Award, MessageSquare } from 'lucide-react';
 
 const MobileNav = () => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   const navItems = [
-    { path: '/', icon: Home, label: 'Home' },
-    { path: '/weather', icon: CloudRain, label: 'Weather' },
-    { path: '/crop-health', icon: Sprout, label: 'Crop' },
-    { path: '/schemes', icon: Award, label: 'Schemes' },
-    { path: '/chatbot', icon: MessageSquare, label: 'Chat' },
+    { path: '/', icon: Home, label: t('nav.home'), id: 'home' },
+    { path: '/weather', icon: CloudRain, label: t('nav.weather'), id: 'weather' },
+    { path: '/crop-health', icon: Sprout, label: t('nav.crop'), id: 'crop' },
+    { path: '/schemes', icon: Award, label: t('nav.schemes'), id: 'schemes' },
+    { path: '/chatbot', icon: MessageSquare, label: t('nav.chat'), id: 'chat' },
   ];
 
   return (
@@ -25,7 +27,7 @@ const MobileNav = () => {
             className={`flex flex-col items-center justify-center transition-colors px-2 py-1 ${
               isActive ? 'text-primary' : 'text-gray-500'
             }`}
-            data-testid={`nav-${item.label.toLowerCase()}`}
+            data-testid={`nav-${item.id}`}
           >
             <Icon className={`w-5 h-5 ${isActive ? 'stroke-[2.5]' : 'stroke-2'}`} />
             <span className="text-[9px] mt-0.5 font-medium whitespace-nowrap">{item.label}</span>

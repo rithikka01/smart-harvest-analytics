@@ -1,0 +1,53 @@
+{
+  "nav": { "home": "होम", "weather": "मौसम", "crop": "फसल", "schemes": "योजनाएँ", "chat": "चैट", "analytics": "विश्लेषण", "settings": "सेटिंग्स", "irrigation": "सिंचाई", "tools": "उपकरण" },
+  "common": {
+    "loading": "लोड हो रहा है...", "refresh": "रिफ्रेश", "save": "सहेजें", "cancel": "रद्द करें", "delete": "हटाएँ", "edit": "संपादित करें", "back": "पीछे", "next": "आगे",
+    "live": "लाइव IoT", "simulated": "नमूना (डेमो) डेटा", "simulated_note": "कोई लाइव IoT सेंसर जुड़ा नहीं है। ये रीडिंग केवल प्रदर्शन के लिए नमूना डेटा हैं।",
+    "last_updated": "अंतिम अपडेट", "source": "स्रोत", "confidence": "विश्वास स्तर", "recommendations": "सुझाव", "observations": "मुख्य अवलोकन",
+    "method": "विधि", "no_farm": "कोई खेत नहीं", "no_farm_hint": "अपना पहला खेत प्रोफ़ाइल बनाएँ", "setup_farm": "खेत सेटअप करें", "add_farm": "खेत जोड़ें",
+    "logout": "लॉगआउट", "language": "भाषा", "optional": "वैकल्पिक", "select_farm": "खेत चुनें", "farm_switched": "{{name}} चुना गया", "error": "कुछ गलत हो गया",
+    "session_expired": "सत्र समाप्त हो गया। कृपया फिर से साइन इन करें।", "ai_generated": "AI द्वारा निर्मित", "estimate": "अनुमान", "unavailable": "उपलब्ध नहीं"
+  },
+  "status": { "optimal": "उत्तम", "warning": "ध्यान दें", "critical": "गंभीर", "normal": "सामान्य", "ok": "ठीक", "healthy": "स्वस्थ", "moderate_stress": "मध्यम तनाव", "high_stress": "अधिक तनाव", "unknown": "अज्ञात" },
+  "dashboard": {
+    "farm_status": "खेत की स्थिति", "soil_moisture": "मिट्टी की नमी", "soil_temp": "मिट्टी का तापमान", "air_temp": "हवा का तापमान", "humidity": "आर्द्रता", "light": "प्रकाश",
+    "crop_health": "AI फसल स्वास्थ्य", "alerts": "चेतावनियाँ", "all_ok": "सभी रीडिंग सामान्य सीमा में हैं", "quick_tools": "खेत के उपकरण",
+    "weather": "मौसम", "forecast": "पूर्वानुमान", "crop_health_link": "फसल स्वास्थ्य", "ai_analysis": "AI विश्लेषण", "yield": "उपज", "prediction": "अनुमान",
+    "government": "सरकारी", "schemes": "योजनाएँ", "crop_recommend": "फसल सुझाव", "fertilizer": "उर्वरक / NPK", "analytics": "विश्लेषण और रिपोर्ट",
+    "irrigation": "स्मार्ट सिंचाई", "data_refreshed": "डेटा रिफ्रेश हुआ", "analyzing": "विश्लेषण हो रहा है...", "reading_time": "रीडिंग समय"
+  },
+  "farm": {
+    "setup_title": "अपना खेत सेटअप करें", "edit_title": "खेत संपादित करें", "subtitle": "अपने खेत की प्रोफ़ाइल तैयार करें", "step_basics": "मूल जानकारी", "step_location": "स्थान", "step_details": "मिट्टी और पानी",
+    "name": "खेत का नाम", "crop_type": "मुख्य फसल", "field_size": "खेत का आकार", "acres": "एकड़", "hectares": "हेक्टेयर", "latitude": "अक्षांश", "longitude": "देशांतर",
+    "address": "पता / गाँव", "use_gps": "मेरी GPS लोकेशन लें", "gps_found": "स्थान मिल गया", "gps_failed": "GPS स्थान नहीं मिला", "soil_type": "मिट्टी का प्रकार", "water_source": "पानी का स्रोत", "season": "मौसम (सीज़न)",
+    "firebase_path": "Firebase सेंसर पथ", "firebase_hint": "यदि IoT सेंसर नहीं जुड़े हैं तो खाली छोड़ें", "complete": "सेटअप पूरा करें", "saved": "खेत सहेजा गया!", "deleted": "खेत हटाया गया",
+    "delete_confirm": "इस खेत और इसके इतिहास को हटाएँ?", "soil": { "alluvial": "जलोढ़", "black": "काली", "red": "लाल", "laterite": "लैटेराइट", "sandy": "बलुई", "clay": "चिकनी", "loamy": "दोमट" },
+    "water": { "borewell": "बोरवेल", "canal": "नहर", "river": "नदी", "rain": "वर्षा आधारित", "pond": "तालाब", "drip": "ड्रिप सिस्टम" },
+    "seasons": { "kharif": "खरीफ (जून-अक्टू)", "rabi": "रबी (नव-मार्च)", "zaid": "जायद (मार्च-जून)", "perennial": "बारहमासी" }
+  },
+  "chat": {
+    "title": "कृषि सहायक", "subtitle": "अपने खेत के बारे में कुछ भी पूछें", "placeholder": "अपना प्रश्न लिखें...", "quick": "त्वरित प्रश्न", "greeting": "नमस्ते! मुझे आपके खेत की प्रोफ़ाइल और नवीनतम रीडिंग पता हैं। फसल, पानी, उर्वरक या मौसम के बारे में पूछें।",
+    "listening": "सुन रहा हूँ...", "speak": "बोलें", "listen": "सुनें", "clear": "इतिहास साफ़ करें", "cleared": "चैट इतिहास साफ़ हुआ", "voice_unsupported": "इस ब्राउज़र में वॉइस इनपुट समर्थित नहीं है", "voice_browser": "ब्राउज़र की वाक् पहचान का उपयोग", "voice_openai": "OpenAI Whisper से लिखा गया",
+    "tts_browser": "डिवाइस की आवाज़ से चल रहा है", "failed": "उत्तर प्राप्त नहीं हुआ", "farm_context": "खेत का संदर्भ चालू"
+  },
+  "irrigation": {
+    "title": "स्मार्ट सिंचाई", "subtitle": "पानी का सही उपयोग", "check_title": "सिंचाई की ज़रूरत जाँचें", "check_hint": "मिट्टी की नमी और मौसम पूर्वानुमान के आधार पर सुझाव", "check": "अभी जाँचें",
+    "water_now": "अभी पानी दें", "wait": "प्रतीक्षा करें", "not_needed": "सिंचाई की ज़रूरत नहीं", "water_amount": "अनुमानित पानी की ज़रूरत", "liters": "लीटर", "timing": "सही समय", "factors": "विचार किए गए कारक"
+  },
+  "analytics": { "title": "विश्लेषण", "subtitle": "सेंसर रुझान और रिपोर्ट", "download_pdf": "PDF रिपोर्ट डाउनलोड करें", "range_24h": "24 घंटे", "range_7d": "7 दिन", "trends": "रुझान", "downloading": "रिपोर्ट तैयार हो रही है...", "downloaded": "रिपोर्ट डाउनलोड हुई" },
+  "reco": {
+    "title": "फसल सुझाव", "subtitle": "आपके डेटासेट पर प्रशिक्षित Random Forest मॉडल", "temperature": "तापमान (°C)", "humidity": "आर्द्रता (%)", "ph": "मिट्टी का pH", "rainfall": "वर्षा (मिमी/माह)",
+    "autofill": "खेत के डेटा से भरें", "recommend": "फसल सुझाएँ", "top5": "शीर्ष 5 सुझाव", "best": "इन परिस्थितियों के लिए सबसे अच्छी फसल", "ph_hint": "pH सेंसर से नहीं मापा जाता - अपने मृदा स्वास्थ्य कार्ड से भरें", "accuracy": "मॉडल परीक्षण सटीकता"
+  },
+  "fert": {
+    "title": "उर्वरक / NPK", "subtitle": "मिट्टी के पोषक तत्व और सलाह", "nitrogen": "नाइट्रोजन (N)", "phosphorus": "फॉस्फोरस (P)", "potassium": "पोटैशियम (K)", "unit": "मृदा परीक्षण से kg/ha",
+    "get": "सुझाव पाएँ", "status": "पोषक तत्व स्थिति", "ai_advice": "AI सलाह", "low": "कम", "medium": "मध्यम", "high": "अधिक", "unknown": "दर्ज नहीं", "include_ai": "AI सलाह शामिल करें"
+  },
+  "settings": {
+    "title": "सेटिंग्स", "subtitle": "प्रोफ़ाइल और प्राथमिकताएँ", "profile": "प्रोफ़ाइल जानकारी", "name": "नाम", "email": "ईमेल", "role": "भूमिका", "language_pref": "भाषा प्राथमिकता",
+    "language_hint": "पूरे ऐप की भाषा बदलें", "manage_farms": "मेरे खेत", "about": "AgriSmart के बारे में", "about_text": "AgriSmart किसानों को IoT सेंसर, मौसम डेटा और ML मॉडल की मदद से खेत की निगरानी और निर्णय लेने में मदद करता है।",
+    "integrations": "सिस्टम स्थिति", "connected": "जुड़ा हुआ", "not_connected": "जुड़ा नहीं", "configured": "कॉन्फ़िगर", "version": "संस्करण", "language_saved": "भाषा अपडेट हुई"
+  },
+  "auth": { "welcome_back": "फिर से स्वागत है", "sign_in_hint": "अपने खेत डैशबोर्ड में साइन इन करें", "sign_in": "साइन इन", "signing_in": "साइन इन हो रहा है...", "no_account": "खाता नहीं है?", "register_here": "यहाँ पंजीकरण करें", "role": "मैं हूँ", "farmer": "किसान", "individual": "व्यक्ति", "officer": "कृषि अधिकारी", "admin": "एडमिन" },
+  "roles": { "farmer": "किसान", "individual": "व्यक्ति", "officer": "कृषि अधिकारी", "admin": "एडमिन" }
+}

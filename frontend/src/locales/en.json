@@ -1,0 +1,53 @@
+{
+  "nav": { "home": "Home", "weather": "Weather", "crop": "Crop", "schemes": "Schemes", "chat": "Chat", "analytics": "Analytics", "settings": "Settings", "irrigation": "Irrigation", "tools": "Tools" },
+  "common": {
+    "loading": "Loading...", "refresh": "Refresh", "save": "Save", "cancel": "Cancel", "delete": "Delete", "edit": "Edit", "back": "Back", "next": "Next",
+    "live": "Live IoT", "simulated": "Simulated demo data", "simulated_note": "No live IoT feed is connected. These readings are simulated for demonstration.",
+    "last_updated": "Last updated", "source": "Source", "confidence": "Confidence", "recommendations": "Recommendations", "observations": "Key Observations",
+    "method": "Method", "no_farm": "No Farm Setup", "no_farm_hint": "Let's create your first farm profile", "setup_farm": "Setup Your Farm", "add_farm": "Add Farm",
+    "logout": "Logout", "language": "Language", "optional": "optional", "select_farm": "Select farm", "farm_switched": "Switched to {{name}}", "error": "Something went wrong",
+    "session_expired": "Session expired. Please sign in again.", "ai_generated": "AI-generated", "estimate": "Estimate", "unavailable": "Unavailable"
+  },
+  "status": { "optimal": "Optimal", "warning": "Needs Attention", "critical": "Critical", "normal": "Normal", "ok": "OK", "healthy": "Healthy", "moderate_stress": "Moderate Stress", "high_stress": "High Stress", "unknown": "Unknown" },
+  "dashboard": {
+    "farm_status": "Farm Status", "soil_moisture": "Soil Moisture", "soil_temp": "Soil Temp", "air_temp": "Air Temp", "humidity": "Humidity", "light": "Light",
+    "crop_health": "AI Crop Health", "alerts": "Alerts", "all_ok": "All readings are within normal range", "quick_tools": "Farm Tools",
+    "weather": "Weather", "forecast": "Forecast", "crop_health_link": "Crop Health", "ai_analysis": "AI Analysis", "yield": "Yield", "prediction": "Prediction",
+    "government": "Government", "schemes": "Schemes", "crop_recommend": "Crop Recommendation", "fertilizer": "Fertilizer / NPK", "analytics": "Analytics & Reports",
+    "irrigation": "Smart Irrigation", "data_refreshed": "Data refreshed", "analyzing": "Analyzing...", "reading_time": "Reading time"
+  },
+  "farm": {
+    "setup_title": "Setup Your Farm", "edit_title": "Edit Farm", "subtitle": "Let's get your farm profile ready", "step_basics": "Basics", "step_location": "Location", "step_details": "Soil & Water",
+    "name": "Farm Name", "crop_type": "Main Crop Type", "field_size": "Field Size", "acres": "Acres", "hectares": "Hectares", "latitude": "Latitude", "longitude": "Longitude",
+    "address": "Address / Village", "use_gps": "Use my GPS location", "gps_found": "Location detected", "gps_failed": "Could not get GPS location", "soil_type": "Soil Type", "water_source": "Water Source", "season": "Season",
+    "firebase_path": "Firebase Sensor Path", "firebase_hint": "Leave empty if you don't have IoT sensors connected yet", "complete": "Complete Setup", "saved": "Farm saved!", "deleted": "Farm deleted",
+    "delete_confirm": "Delete this farm and its history?", "soil": { "alluvial": "Alluvial", "black": "Black", "red": "Red", "laterite": "Laterite", "sandy": "Sandy", "clay": "Clay", "loamy": "Loamy" },
+    "water": { "borewell": "Borewell", "canal": "Canal", "river": "River", "rain": "Rain-fed", "pond": "Pond / Tank", "drip": "Drip system" },
+    "seasons": { "kharif": "Kharif (Jun-Oct)", "rabi": "Rabi (Nov-Mar)", "zaid": "Zaid (Mar-Jun)", "perennial": "Perennial" }
+  },
+  "chat": {
+    "title": "Farming Assistant", "subtitle": "Ask anything about your farm", "placeholder": "Type your question...", "quick": "Quick questions", "greeting": "Hello! I know your farm profile and latest readings. Ask me anything about your crops, water, fertilizer or weather.",
+    "listening": "Listening...", "speak": "Speak", "listen": "Listen", "clear": "Clear history", "cleared": "Chat history cleared", "voice_unsupported": "Voice input is not supported in this browser", "voice_browser": "Using browser speech recognition", "voice_openai": "Transcribed with OpenAI Whisper",
+    "tts_browser": "Playing with device voice", "failed": "Failed to get response", "farm_context": "Farm context on"
+  },
+  "irrigation": {
+    "title": "Smart Irrigation", "subtitle": "Optimize water usage", "check_title": "Check Irrigation Needs", "check_hint": "Recommendation based on soil moisture and weather forecast", "check": "Check Now",
+    "water_now": "Water Now", "wait": "Wait", "not_needed": "No Irrigation Needed", "water_amount": "Estimated Water Requirement", "liters": "liters", "timing": "Best time", "factors": "Factors considered"
+  },
+  "analytics": { "title": "Analytics", "subtitle": "Sensor trends and reports", "download_pdf": "Download PDF Report", "range_24h": "24 hours", "range_7d": "7 days", "trends": "Trends", "downloading": "Preparing report...", "downloaded": "Report downloaded" },
+  "reco": {
+    "title": "Crop Recommendation", "subtitle": "Random Forest model trained on your dataset", "temperature": "Temperature (°C)", "humidity": "Humidity (%)", "ph": "Soil pH", "rainfall": "Rainfall (mm/month)",
+    "autofill": "Auto-fill from farm data", "recommend": "Recommend Crop", "top5": "Top 5 Recommendations", "best": "Best crop for these conditions", "ph_hint": "pH is not measured by sensors - enter from your Soil Health Card", "accuracy": "Model test accuracy"
+  },
+  "fert": {
+    "title": "Fertilizer / NPK", "subtitle": "Soil nutrient status and advice", "nitrogen": "Nitrogen (N)", "phosphorus": "Phosphorus (P)", "potassium": "Potassium (K)", "unit": "kg/ha from soil test",
+    "get": "Get Recommendations", "status": "Nutrient Status", "ai_advice": "AI Advice", "low": "Low", "medium": "Medium", "high": "High", "unknown": "Not entered", "include_ai": "Include AI advice"
+  },
+  "settings": {
+    "title": "Settings", "subtitle": "Manage your profile and preferences", "profile": "Profile Information", "name": "Name", "email": "Email", "role": "Role", "language_pref": "Language Preference",
+    "language_hint": "Change language for the entire app interface", "manage_farms": "My Farms", "about": "About AgriSmart", "about_text": "AgriSmart helps farmers monitor their farms, understand crop health and make data-driven decisions using IoT sensors, weather data and ML models.",
+    "integrations": "System Status", "connected": "Connected", "not_connected": "Not connected", "configured": "Configured", "version": "Version", "language_saved": "Language updated"
+  },
+  "auth": { "welcome_back": "Welcome Back", "sign_in_hint": "Sign in to your farm dashboard", "sign_in": "Sign In", "signing_in": "Signing in...", "no_account": "Don't have an account?", "register_here": "Register here", "role": "I am a", "farmer": "Farmer", "individual": "Individual", "officer": "Agricultural Officer", "admin": "Admin" },
+  "roles": { "farmer": "Farmer", "individual": "Individual", "officer": "Agricultural Officer", "admin": "Admin" }
+}

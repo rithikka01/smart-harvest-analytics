@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+import i18n from '@/i18n';
 
 const AuthContext = createContext(null);
 
@@ -11,17 +12,43 @@ export const useAuth = () => {
   return context;
 };
 
+const clearSession = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  localStorage.removeItem('selectedFarmId');
+  delete axios.defaults.headers.common['Authorization'];
+};
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const id = axios.interceptors.response.use(
+      (res) => res,
+      (error) => {
+        const url = error.config?.url || '';
+        if (error.response?.status === 401 && !url.includes('/api/auth/login') && !url.includes('/api/auth/register')) {
+          clearSession();
+          setToken(null);
+          setUser(null);
+          sessionStorage.setItem('sessionExpired', '1');
+        }
+        return Promise.reject(error);
+      }
+    );
+    return () => axios.interceptors.response.eject(id);
+  }, []);
+
+  useEffect(() => {
     if (token) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       const storedUser = localStorage.getItem('user');
       if (storedUser) {
-        setUser(JSON.parse(storedUser));
+        const parsed = JSON.parse(storedUser);
+        setUser(parsed);
+        if (parsed.language && !localStorage.getItem('language')) i18n.changeLanguage(parsed.language);
       }
     }
     setLoading(false);
@@ -36,15 +63,19 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    delete axios.defaults.headers.common['Authorization'];
+    clearSession();
     setToken(null);
     setUser(null);
   };
 
+  const updateUser = (patch) => {
+    const next = { ...user, ...patch };
+    localStorage.setItem('user', JSON.stringify(next));
+    setUser(next);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, token, login, logout, loading }}>
+    <AuthContext.Provider value={{ user, token, login, logout, loading, updateUser }}>
       {children}
     </AuthContext.Provider>
   );

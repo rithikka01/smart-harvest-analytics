@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
+import { FarmProvider } from "@/contexts/FarmContext";
 import { Toaster } from "@/components/ui/sonner";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
@@ -15,7 +15,11 @@ import Alerts from "@/pages/Alerts";
 import Schemes from "@/pages/Schemes";
 import FarmSetup from "@/pages/FarmSetup";
 import Settings from "@/pages/Settings";
+import Analytics from "@/pages/Analytics";
+import CropRecommend from "@/pages/CropRecommend";
+import Fertilizer from "@/pages/Fertilizer";
 import MobileNav from "@/components/MobileNav";
+import TopNav from "@/components/TopNav";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -36,10 +40,12 @@ const AppContent = () => {
 
   return (
     <div className="App">
+      {user && <TopNav />}
       <Routes>
         <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
         <Route path="/register" element={user ? <Navigate to="/" /> : <Register />} />
         <Route path="/farm-setup" element={<PrivateRoute><FarmSetup /></PrivateRoute>} />
+        <Route path="/farm-setup/:farmId" element={<PrivateRoute><FarmSetup /></PrivateRoute>} />
         <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         <Route path="/weather" element={<PrivateRoute><Weather /></PrivateRoute>} />
         <Route path="/crop-health" element={<PrivateRoute><CropHealth /></PrivateRoute>} />
@@ -49,6 +55,10 @@ const AppContent = () => {
         <Route path="/alerts" element={<PrivateRoute><Alerts /></PrivateRoute>} />
         <Route path="/schemes" element={<PrivateRoute><Schemes /></PrivateRoute>} />
         <Route path="/settings" element={<PrivateRoute><Settings /></PrivateRoute>} />
+        <Route path="/analytics" element={<PrivateRoute><Analytics /></PrivateRoute>} />
+        <Route path="/crop-recommend" element={<PrivateRoute><CropRecommend /></PrivateRoute>} />
+        <Route path="/fertilizer" element={<PrivateRoute><Fertilizer /></PrivateRoute>} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       {user && <MobileNav />}
       <Toaster position="top-center" />
@@ -60,7 +70,9 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <AppContent />
+        <FarmProvider>
+          <AppContent />
+        </FarmProvider>
       </AuthProvider>
     </BrowserRouter>
   );

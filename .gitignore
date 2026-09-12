@@ -84,23 +84,32 @@ frontend/node_modules/.cache/default-development/0.pack
 frontend/node_modules/.cache/default-development/1.pack
 frontend/node_modules/.cache/default-development/2.pack
 frontend/node_modules/.cache/default-development/3.pack
--e 
 # Environment files
 *.env
 *.env.*
--e 
 # Environment files
 *.env
 *.env.*
--e 
 # Environment files
 *.env
 *.env.*
--e 
 # Environment files
 *.env
 *.env.*
--e 
 # Environment files
 *.env
 *.env.*
+
+# ---- AgriSmart secrets & large artifacts ----
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+backend/firebase_config.json
+**/firebase_config.json
+**/serviceAccountKey*.json
+backend/__pycache__/
+credentials.json
+*.key
+.credentials

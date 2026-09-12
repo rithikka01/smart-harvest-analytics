@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '@/contexts/AuthContext';
+import i18n from '@/i18n';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -18,6 +19,7 @@ const Register = () => {
     mobile: '',
     password: '',
     language: 'en',
+    role: 'farmer',
   });
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
@@ -30,6 +32,7 @@ const Register = () => {
     try {
       const response = await axios.post(`${BACKEND_URL}/api/auth/register`, formData);
       login(response.data.token, response.data.user);
+      i18n.changeLanguage(formData.language);
       toast.success('Account created successfully!');
       navigate('/farm-setup');
     } catch (error) {
@@ -106,6 +109,23 @@ const Register = () => {
                 <SelectItem value="ta">தமிழ் (Tamil)</SelectItem>
                 <SelectItem value="te">తెలుగు (Telugu)</SelectItem>
                 <SelectItem value="ml">മലയാളം (Malayalam)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="role">I am a</Label>
+            <Select
+              value={formData.role}
+              onValueChange={(value) => setFormData({ ...formData, role: value })}
+            >
+              <SelectTrigger className="h-12" data-testid="register-role-select">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="farmer">Farmer</SelectItem>
+                <SelectItem value="individual">Individual</SelectItem>
+                <SelectItem value="officer">Agricultural Officer</SelectItem>
               </SelectContent>
             </Select>
           </div>

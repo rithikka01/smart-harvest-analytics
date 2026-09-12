@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '@/contexts/AuthContext';
@@ -7,6 +7,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 import { Sprout, Loader2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { LANGUAGES } from '@/i18n';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -16,6 +18,14 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    if (sessionStorage.getItem('sessionExpired')) {
+      sessionStorage.removeItem('sessionExpired');
+      toast.error(t('common.session_expired'), { duration: 8000 });
+    }
+  }, [t]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,8 +68,16 @@ const Login = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white mb-4">
               <Sprout className="w-8 h-8" />
             </div>
-            <h2 className="font-heading text-3xl font-bold text-foreground">Welcome Back</h2>
-            <p className="mt-2 text-muted-foreground">Sign in to your farm dashboard</p>
+            <h2 className="font-heading text-3xl font-bold text-foreground">{t('auth.welcome_back')}</h2>
+            <p className="mt-2 text-muted-foreground">{t('auth.sign_in_hint')}</p>
+            <select
+              value={i18n.language}
+              onChange={(e) => i18n.changeLanguage(e.target.value)}
+              className="mt-3 h-9 rounded-full border bg-background px-3 text-sm"
+              data-testid="login-language-select"
+            >
+              {LANGUAGES.map((l) => <option key={l.code} value={l.code}>{l.label}</option>)}
+            </select>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6" data-testid="login-form">
@@ -100,19 +118,19 @@ const Login = () => {
               {loading ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Signing in...
+                  {t('auth.signing_in')}
                 </>
               ) : (
-                'Sign In'
+                t('auth.sign_in')
               )}
             </Button>
           </form>
 
           <div className="text-center">
             <p className="text-muted-foreground">
-              Don't have an account?{' '}
+              {t('auth.no_account')}{' '}
               <Link to="/register" className="text-primary font-semibold hover:underline" data-testid="register-link">
-                Register here
+                {t('auth.register_here')}
               </Link>
             </p>
           </div>

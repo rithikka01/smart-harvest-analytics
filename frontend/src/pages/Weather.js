@@ -3,27 +3,29 @@ import axios from 'axios';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
 import { CloudRain, Droplets, Wind, Sun, AlertTriangle, Calendar } from 'lucide-react';
+import { useFarm } from '@/contexts/FarmContext';
+import { FarmSwitcher } from '@/components/FarmSwitcher';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { currentFarm, loading: farmsLoading } = useFarm();
 
   useEffect(() => {
-    loadWeather();
-  }, []);
+    if (farmsLoading) return;
+    if (!currentFarm) { setLoading(false); return; }
+    setLoading(true);
+    loadWeather(currentFarm);
+  }, [currentFarm?.id, farmsLoading]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const loadWeather = async () => {
+  const loadWeather = async (farm) => {
     try {
-      const farmsRes = await axios.get(`${BACKEND_URL}/api/farms`);
-      if (farmsRes.data.length > 0) {
-        const farm = farmsRes.data[0];
-        const weatherRes = await axios.get(`${BACKEND_URL}/api/weather`, {
-          params: { lat: farm.location.lat, lon: farm.location.lng },
-        });
-        setWeather(weatherRes.data);
-      }
+      const weatherRes = await axios.get(`${BACKEND_URL}/api/weather`, {
+        params: { lat: farm.location.lat, lon: farm.location.lng },
+      });
+      setWeather(weatherRes.data);
     } catch (error) {
       toast.error('Failed to load weather data');
     } finally {
@@ -42,11 +44,14 @@ const Weather = () => {
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-8">
       <div className="weather-gradient text-white p-6 md:p-8">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="font-heading text-3xl md:text-4xl font-bold mb-2" data-testid="weather-title">
-            Weather Forecast
-          </h1>
-          <p className="text-white/90">7-day weather outlook</p>
+        <div className="max-w-7xl mx-auto flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h1 className="font-heading text-3xl md:text-4xl font-bold mb-2" data-testid="weather-title">
+              Weather Forecast
+            </h1>
+            <p className="text-white/90">7-day outlook{weather?.location ? ` · ${weather.location}` : ''} · weatherapi.com</p>
+          </div>
+          <FarmSwitcher light />
         </div>
       </div>
 

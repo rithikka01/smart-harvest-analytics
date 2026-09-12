@@ -15,14 +15,14 @@
 
 ### On Android (Chrome):
 1. Open Chrome browser
-2. Visit: `https://cropmonitor-12.preview.emergentagent.com`
+2. Visit: `https://farm-intel-30.preview.emergentagent.com`
 3. Tap the **3-dot menu** (⋮) → **Install App** or **Add to Home Screen**
 4. Confirm installation
 5. AgriSmart icon will appear on your home screen!
 
 ### On iPhone/iPad (Safari):
 1. Open Safari browser
-2. Visit: `https://cropmonitor-12.preview.emergentagent.com`
+2. Visit: `https://farm-intel-30.preview.emergentagent.com`
 3. Tap the **Share button** (□↑)
 4. Scroll down → Tap **"Add to Home Screen"**
 5. Name it "AgriSmart" → Tap **Add**
@@ -42,7 +42,7 @@
 ### Option 1: Keep Using Current Preview URL
 Your app is already live at:
 ```
-https://cropmonitor-12.preview.emergentagent.com
+https://farm-intel-30.preview.emergentagent.com
 ```
 - This works on any device
 - Just share this link with users
@@ -275,7 +275,7 @@ void loop() {
 Your AgriSmart app is fully functional and ready to deploy!
 
 **Quick Start:**
-1. Visit: https://cropmonitor-12.preview.emergentagent.com
+1. Visit: https://farm-intel-30.preview.emergentagent.com
 2. Install as app on your phone
 3. Login and start monitoring!
 

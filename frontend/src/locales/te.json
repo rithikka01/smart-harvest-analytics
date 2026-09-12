@@ -1,0 +1,53 @@
+{
+  "nav": { "home": "హోమ్", "weather": "వాతావరణం", "crop": "పంట", "schemes": "పథకాలు", "chat": "చాట్", "analytics": "విశ్లేషణ", "settings": "సెట్టింగ్స్", "irrigation": "నీటిపారుదల", "tools": "సాధనాలు" },
+  "common": {
+    "loading": "లోడ్ అవుతోంది...", "refresh": "రిఫ్రెష్", "save": "సేవ్", "cancel": "రద్దు", "delete": "తొలగించు", "edit": "సవరించు", "back": "వెనుకకు", "next": "తదుపరి",
+    "live": "లైవ్ IoT", "simulated": "నమూనా (డెమో) డేటా", "simulated_note": "లైవ్ IoT సెన్సార్ కనెక్ట్ కాలేదు. ఈ రీడింగ్‌లు ప్రదర్శన కోసం సృష్టించిన నమూనా డేటా.",
+    "last_updated": "చివరి అప్‌డేట్", "source": "మూలం", "confidence": "విశ్వాసం", "recommendations": "సిఫార్సులు", "observations": "ముఖ్య పరిశీలనలు",
+    "method": "పద్ధతి", "no_farm": "పొలం లేదు", "no_farm_hint": "మీ మొదటి పొలం ప్రొఫైల్ సృష్టించండి", "setup_farm": "పొలం సెటప్ చేయండి", "add_farm": "పొలం జోడించు",
+    "logout": "లాగ్అవుట్", "language": "భాష", "optional": "ఐచ్ఛికం", "select_farm": "పొలం ఎంచుకోండి", "farm_switched": "{{name}} ఎంచుకున్నారు", "error": "ఏదో తప్పు జరిగింది",
+    "session_expired": "సెషన్ ముగిసింది. దయచేసి మళ్లీ సైన్ ఇన్ చేయండి.", "ai_generated": "AI రూపొందించింది", "estimate": "అంచనా", "unavailable": "అందుబాటులో లేదు"
+  },
+  "status": { "optimal": "ఉత్తమం", "warning": "శ్రద్ధ అవసరం", "critical": "తీవ్రం", "normal": "సాధారణం", "ok": "సరే", "healthy": "ఆరోగ్యం", "moderate_stress": "మధ్యస్థ ఒత్తిడి", "high_stress": "అధిక ఒత్తిడి", "unknown": "తెలియదు" },
+  "dashboard": {
+    "farm_status": "పొలం స్థితి", "soil_moisture": "నేల తేమ", "soil_temp": "నేల ఉష్ణోగ్రత", "air_temp": "గాలి ఉష్ణోగ్రత", "humidity": "తేమ", "light": "కాంతి",
+    "crop_health": "AI పంట ఆరోగ్యం", "alerts": "హెచ్చరికలు", "all_ok": "అన్ని రీడింగ్‌లు సాధారణ పరిధిలో ఉన్నాయి", "quick_tools": "పొలం సాధనాలు",
+    "weather": "వాతావరణం", "forecast": "సూచన", "crop_health_link": "పంట ఆరోగ్యం", "ai_analysis": "AI విశ్లేషణ", "yield": "దిగుబడి", "prediction": "అంచనా",
+    "government": "ప్రభుత్వ", "schemes": "పథకాలు", "crop_recommend": "పంట సిఫార్సు", "fertilizer": "ఎరువు / NPK", "analytics": "విశ్లేషణ & నివేదికలు",
+    "irrigation": "స్మార్ట్ నీటిపారుదల", "data_refreshed": "డేటా రిఫ్రెష్ అయింది", "analyzing": "విశ్లేషిస్తోంది...", "reading_time": "రీడింగ్ సమయం"
+  },
+  "farm": {
+    "setup_title": "మీ పొలం సెటప్ చేయండి", "edit_title": "పొలం సవరించు", "subtitle": "మీ పొలం ప్రొఫైల్ సిద్ధం చేద్దాం", "step_basics": "ప్రాథమికం", "step_location": "స్థానం", "step_details": "నేల & నీరు",
+    "name": "పొలం పేరు", "crop_type": "ప్రధాన పంట", "field_size": "పొలం విస్తీర్ణం", "acres": "ఎకరాలు", "hectares": "హెక్టార్లు", "latitude": "అక్షాంశం", "longitude": "రేఖాంశం",
+    "address": "చిరునామా / గ్రామం", "use_gps": "నా GPS స్థానం వాడు", "gps_found": "స్థానం గుర్తించబడింది", "gps_failed": "GPS స్థానం పొందలేకపోయాం", "soil_type": "నేల రకం", "water_source": "నీటి వనరు", "season": "సీజన్",
+    "firebase_path": "Firebase సెన్సార్ మార్గం", "firebase_hint": "IoT సెన్సార్లు లేకపోతే ఖాళీగా వదిలేయండి", "complete": "సెటప్ పూర్తి చేయి", "saved": "పొలం సేవ్ అయింది!", "deleted": "పొలం తొలగించబడింది",
+    "delete_confirm": "ఈ పొలం మరియు దాని చరిత్రను తొలగించాలా?", "soil": { "alluvial": "ఒండ్రు", "black": "నల్ల", "red": "ఎర్ర", "laterite": "లేటరైట్", "sandy": "ఇసుక", "clay": "బంకమట్టి", "loamy": "లోమీ" },
+    "water": { "borewell": "బోరుబావి", "canal": "కాలువ", "river": "నది", "rain": "వర్షాధారం", "pond": "చెరువు", "drip": "డ్రిప్ వ్యవస్థ" },
+    "seasons": { "kharif": "ఖరీఫ్ (జూన్-అక్టో)", "rabi": "రబీ (నవ-మార్చి)", "zaid": "జాయద్ (మార్చి-జూన్)", "perennial": "ఏడాది పొడవునా" }
+  },
+  "chat": {
+    "title": "వ్యవసాయ సహాయకుడు", "subtitle": "మీ పొలం గురించి ఏదైనా అడగండి", "placeholder": "మీ ప్రశ్న టైప్ చేయండి...", "quick": "త్వరిత ప్రశ్నలు", "greeting": "నమస్కారం! మీ పొలం ప్రొఫైల్ మరియు తాజా రీడింగ్‌లు నాకు తెలుసు. పంటలు, నీరు, ఎరువులు లేదా వాతావరణం గురించి అడగండి.",
+    "listening": "వింటున్నాను...", "speak": "మాట్లాడు", "listen": "విను", "clear": "చరిత్ర తొలగించు", "cleared": "చాట్ చరిత్ర తొలగించబడింది", "voice_unsupported": "ఈ బ్రౌజర్‌లో వాయిస్ ఇన్‌పుట్ మద్దతు లేదు", "voice_browser": "బ్రౌజర్ స్పీచ్ గుర్తింపు వాడుతోంది", "voice_openai": "OpenAI Whisper తో రాయబడింది",
+    "tts_browser": "పరికర స్వరంతో ప్లే అవుతోంది", "failed": "సమాధానం పొందలేకపోయాం", "farm_context": "పొలం సందర్భం ఆన్"
+  },
+  "irrigation": {
+    "title": "స్మార్ట్ నీటిపారుదల", "subtitle": "నీటిని సరిగ్గా వాడండి", "check_title": "నీటిపారుదల అవసరం తనిఖీ", "check_hint": "నేల తేమ మరియు వాతావరణ సూచన ఆధారంగా సిఫార్సు", "check": "ఇప్పుడు తనిఖీ",
+    "water_now": "ఇప్పుడు నీరు పెట్టండి", "wait": "వేచి ఉండండి", "not_needed": "నీటిపారుదల అవసరం లేదు", "water_amount": "అంచనా నీటి అవసరం", "liters": "లీటర్లు", "timing": "ఉత్తమ సమయం", "factors": "పరిగణించిన అంశాలు"
+  },
+  "analytics": { "title": "విశ్లేషణ", "subtitle": "సెన్సార్ ట్రెండ్స్ & నివేదికలు", "download_pdf": "PDF నివేదిక డౌన్‌లోడ్", "range_24h": "24 గంటలు", "range_7d": "7 రోజులు", "trends": "ట్రెండ్స్", "downloading": "నివేదిక సిద్ధమవుతోంది...", "downloaded": "నివేదిక డౌన్‌లోడ్ అయింది" },
+  "reco": {
+    "title": "పంట సిఫార్సు", "subtitle": "మీ డేటాసెట్‌పై శిక్షణ పొందిన Random Forest మోడల్", "temperature": "ఉష్ణోగ్రత (°C)", "humidity": "తేమ (%)", "ph": "నేల pH", "rainfall": "వర్షపాతం (మిమీ/నెల)",
+    "autofill": "పొలం డేటా నుంచి నింపు", "recommend": "పంట సిఫార్సు చేయి", "top5": "టాప్ 5 సిఫార్సులు", "best": "ఈ పరిస్థితులకు ఉత్తమ పంట", "ph_hint": "pH సెన్సార్‌తో కొలవబడదు - మీ సాయిల్ హెల్త్ కార్డ్ నుంచి నమోదు చేయండి", "accuracy": "మోడల్ టెస్ట్ ఖచ్చితత్వం"
+  },
+  "fert": {
+    "title": "ఎరువు / NPK", "subtitle": "నేల పోషక స్థితి & సలహా", "nitrogen": "నత్రజని (N)", "phosphorus": "భాస్వరం (P)", "potassium": "పొటాషియం (K)", "unit": "నేల పరీక్ష నుంచి kg/ha",
+    "get": "సిఫార్సులు పొందు", "status": "పోషక స్థితి", "ai_advice": "AI సలహా", "low": "తక్కువ", "medium": "మధ్యస్థం", "high": "అధికం", "unknown": "నమోదు కాలేదు", "include_ai": "AI సలహా చేర్చు"
+  },
+  "settings": {
+    "title": "సెట్టింగ్స్", "subtitle": "ప్రొఫైల్ & ప్రాధాన్యతలు", "profile": "ప్రొఫైల్ సమాచారం", "name": "పేరు", "email": "ఇమెయిల్", "role": "పాత్ర", "language_pref": "భాష ప్రాధాన్యత",
+    "language_hint": "మొత్తం యాప్ భాషను మార్చండి", "manage_farms": "నా పొలాలు", "about": "AgriSmart గురించి", "about_text": "AgriSmart IoT సెన్సార్లు, వాతావరణ డేటా మరియు ML మోడల్‌లతో రైతులకు పొలం పర్యవేక్షణ మరియు నిర్ణయాలలో సహాయపడుతుంది.",
+    "integrations": "సిస్టమ్ స్థితి", "connected": "కనెక్ట్ అయింది", "not_connected": "కనెక్ట్ కాలేదు", "configured": "కాన్ఫిగర్ చేయబడింది", "version": "వెర్షన్", "language_saved": "భాష అప్‌డేట్ అయింది"
+  },
+  "auth": { "welcome_back": "మళ్లీ స్వాగతం", "sign_in_hint": "మీ పొలం డాష్‌బోర్డ్‌లోకి సైన్ ఇన్ చేయండి", "sign_in": "సైన్ ఇన్", "signing_in": "సైన్ ఇన్ అవుతోంది...", "no_account": "ఖాతా లేదా?", "register_here": "ఇక్కడ నమోదు చేయండి", "role": "నేను", "farmer": "రైతు", "individual": "వ్యక్తి", "officer": "వ్యవసాయ అధికారి", "admin": "అడ్మిన్" },
+  "roles": { "farmer": "రైతు", "individual": "వ్యక్తి", "officer": "వ్యవసాయ అధికారి", "admin": "అడ్మిన్" }
+}

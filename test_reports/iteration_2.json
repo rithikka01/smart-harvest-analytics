@@ -1,0 +1,33 @@
+{
+  "summary": "AgriSmart re-tested end-to-end after upgrade. Backend: 31/32 pytest cases pass. Frontend: login (with Hindi i18n), Dashboard (all 5 sensor cards + badges + quick links + simulated banner), Farm wizard 3-step flow, Farm switcher, Settings (profile/language/system-status with 'Not connected · Simulated demo data'), Fertilizer (Low/Medium/High correctly rated), Crop Recommend (autofill + 5 top-crop rows + model-metrics), Irrigation (recommendation card, reason, data-source badge), Analytics (all 5 charts + range buttons + PDF button + simulated note), Chatbot (farm context banner, quick questions, assistant reply with Listen button, clear-history) all working. 401 handling redirects to /login when localStorage token is invalid.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "GET /api/chatbot/history", "issue": "When user+assistant messages are inserted with identical timestamps (same insert_many call), retrieved order is non-deterministic and can return [assistant, user] instead of chronological [user, assistant]. Reproduction: DELETE history, POST /api/chatbot, GET history -> observed msgs[0].role='assistant'. Fix: give assistant a timestamp +1ms, or add a monotonic sequence field, or sort by (created_at, role_priority)."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "AuthContext 401 handler", "issue": "On invalid token the app correctly redirects to /login, but the 'Session expired' toast text was not observed on the page (either it disappears too quickly or the exact copy differs). Non-blocking.", "selector": "toast (sonner)", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": ["/app/backend/tests/test_agrismart.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "Fix chatbot history ordering when user+assistant share the same created_at (see minor backend issue).",
+    "Optional: increase 'Session expired' toast duration or verify the copy string ('Session expired' vs another wording) so it is visible/testable."
+  ],
+  "critical_code_review_comments": [
+    "server.py inserts user+assistant chat messages with identical ISO timestamps -> ordering ambiguity (documented above).",
+    "server.py is ~840 lines; consider splitting routes into modules (auth, farms, sensors, ai, admin) for maintainability.",
+    "farm_report endpoint calls recommend_irrigation(farm_id, current_user) which re-runs get_owned_farm, fetch_sensor_reading, and safe_weather; consider passing already-fetched sensor/weather to avoid duplicate work and API calls per PDF generation."
+  ],
+  "updated_files": ["/app/backend/tests/test_agrismart.py"],
+  "success_rate": {"backend": "97% (31/32)", "frontend": "98% (all critical flows pass, minor 401 toast copy not verified)"},
+  "test_credentials": "demo@farm.com / pass123 (existing farmer with Green Valley Farm)",
+  "seed_data_creation": "Created transient TEST_ officer users and a TEST Wizard Farm which was deleted at end of run. No changes to seed data.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Backend tests live at /app/backend/tests/test_agrismart.py (pytest). Only known bug: chat history ordering on identical timestamps. Firebase intentionally disconnected -> source='simulated' is expected. When testing farm wizard, area-unit-select is a shadcn button (not native select); use force=True click on options."
+}
