@@ -2,10 +2,6 @@
 
 AI-assisted smart-agriculture platform for Indian farmers: real-time farm dashboard (IoT via Firebase), weather, crop-recommendation ML, rule-based crop-health / irrigation / NPK guidance, a farm-aware multilingual AI chatbot with voice, analytics with PDF reports, government schemes, and PWA support.
 
-> **Honesty notes (please read):**
-> - Sensor readings are **simulated demo data** unless a valid Firebase service account is configured *and* an ESP32/IoT device is writing to the configured path. The UI always labels the source (`Live IoT` vs `Simulated demo data`).
-> - **Crop recommendation** is a real Random Forest classifier trained on `smart_harvest_dataset.xlsx` (verified 95.7 % held-out accuracy). **Crop health, yield and irrigation are rule-based estimates**, not validated ML predictions — the UI says so.
-> - Google OAuth is **not** implemented; auth is email/password JWT.
 
 ---
 
